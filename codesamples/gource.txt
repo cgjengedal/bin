@@ -1,0 +1,11 @@
+
+# OK speed bad quality
+gource -p 0.98 --hide filenames --stop-at-end --highlight-all-users --disable-bloom --auto-skip-seconds 0.5 --output-ppm-stream - | ffmpeg -y -b 3000K -r 60 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 -b 800k -g 300 -bf 2 matterhorn.avi
+
+# OK speed OK quality
+gource -p 0.98 --hide filenames --stop-at-end --highlight-all-users --disable-bloom --auto-skip-seconds 0.5 --output-ppm-stream - | ffmpeg -y -b 3000K -r 60 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 -b 1200kb -ar 24000 -mbd rd -flags +mv4+aic -trellis 2 -cmp 2 -subcmp 2 -g 300 -pass 1/2 matterhorn.avi
+
+
+# Bad speed
+gource -p 0.98 --hide filenames --stop-at-end --seconds-per-day 0.5 --highlight-all-users --disable-bloom --auto-skip-seconds 0.5 --output-ppm-stream - | ffmpeg -y -b 3000K -r 60 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 -b 800k -g 300 -bf 2 matterhorn.avi
+

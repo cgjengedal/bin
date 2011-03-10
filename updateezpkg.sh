@@ -4,7 +4,7 @@
 
 DOCROOT='/home/cpg/workspace/ezpublish'
 PACKAGEREPOSITORY='/home/cpg/tmp/ez_packages'
-PACKAGEURL='http://packages.ez.no/ezpublish/4.4/4.4.0'
+PACKAGEURL='http://packages.ez.no/ezpublish/4.5/4.5.0beta1/'
 
 function removeOldPackages
 {

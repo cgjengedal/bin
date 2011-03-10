@@ -24,7 +24,7 @@ do
         
         pushd "$REPOSITORY" > /dev/null
         
-        echo -n Updating `$BASENAME $REPOSITORY`...
+        echo -n Checking status on `$BASENAME $REPOSITORY`...
         
         if [[ -d $REPOSITORY/$SVN_FOLDER ]]
         then
