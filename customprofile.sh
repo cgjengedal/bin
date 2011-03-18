@@ -1,7 +1,7 @@
 # /etc/profile.d/cpg.sh
 # My own custom profile-stuff
 
-# Color highlighted less
+# Color highlighted less w/source-highlight
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
@@ -16,4 +16,5 @@ alias ll='ls -lh --color=auto'
 alias tplfiles='find -L . -name "*.tpl"'
 alias phpfiles='find -L . -name "*.php"'
 alias jsfiles='find -L . -name "*.js"'
+alias inifiles='find -L . -name "*.ini*"'
 
