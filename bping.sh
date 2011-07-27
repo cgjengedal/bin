@@ -11,9 +11,9 @@
 # program that makes my script superfluous
 
 # Network to test.  Should be read as parameters.
-NETWORK="10.0.0."
+NETWORK="192.168.100."
 LOWADDR="1"
-HIADDR="150"
+HIADDR="250"
 PING="/bin/ping"
 
 # Reads in /ets/hosts for convenience

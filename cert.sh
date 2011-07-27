@@ -41,6 +41,16 @@ do
 #      done
    fi
 done
+# Filehandlers: 
+echo -e '\nPHP filehandlers'
+for x in $files 
+do
+   res=`grep -n -E 'fopen|fputs|fwrite|fclose|file_get_contents|file_put_contents|splfileinfo|splfileobject|file_exists' $x`
+   if [ ${#res} -ne 0 ]; then 
+      echo $x; 
+      echo "${res}"
+   fi
+done
 
 
 # 20 biggest files: 

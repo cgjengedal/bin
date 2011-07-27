@@ -1,8 +1,6 @@
 # /etc/profile.d/cpg.sh
 # My own custom profile-stuff
-
-# Color highlighted less w/source-highlight
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+[ -x /usr/bin/src-hilite-lesspipe.sh ] && export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
 # Eclipse hack
@@ -19,4 +17,5 @@ alias jsfiles='find -L . -name "*.js"'
 alias phpfiles='find -L . -name "*.php"'
 alias sqlfiles='find -L . -name "*.sql"'
 alias tplfiles='find -L . -name "*.tpl"'
+alias tsfiles='find -L . -name "*.ts"'
 
