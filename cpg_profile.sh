@@ -1,5 +1,6 @@
 # /etc/profile.d/cpg.sh
-# My own custom profile-stuff
+
+# source-highlight
 [ -x /usr/bin/src-hilite-lesspipe.sh ] && export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
@@ -8,7 +9,6 @@ export GDK_NATIVE_WINDOWS=true
 
 PATH=$PATH:/home/cpg/bin
 
-alias clamscan='freshclam; clamscan / -r --quiet --exclude-dir=^/sys\|^/proc\|^/dev'
 alias up='yum update -y'
 alias ll='ls -lh --color=auto'
 alias cssfiles='find -L . -name "*.css"'
