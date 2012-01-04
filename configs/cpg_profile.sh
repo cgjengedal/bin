@@ -11,12 +11,14 @@ PATH=$PATH:/home/cpg/bin
 
 alias up='yum update -y'
 alias ll='ls -lh --color=auto'
+alias ping='ping -c 10'
 
 # Locating files
 alias cssfiles='find -L . -name "*.css"'
 alias inifiles='find -L . -name "*.ini*"'
 alias jsfiles='find -L . -name "*.js"'
-alias phpfiles='find -L . -name "*.php"'
+#alias phpfiles='find -L . -name "*.php"'
+alias phpfiles='find . -path "./settings" -prune -o -name "*.php" -type f -print'
 alias sqlfiles='find -L . -name "*.sql"'
 alias tplfiles='find -L . -name "*.tpl"'
 alias tsfiles='find -L . -name "*.ts"'
@@ -31,4 +33,8 @@ alias sqlops='phpfiles | xargs egrep "mysql_|mysqli_|pg_|oci_"'
 
 # Remove CLI formatting
 alias noformatting='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
+
+# Formatting
+alias dosbreaks="grep -Ilsr $'\r$' ."
+alias striptrailingspaces="sed -i 's/[[:space:]]*$//g' **/*.*"
 
