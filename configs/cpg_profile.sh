@@ -12,6 +12,7 @@ PATH=$PATH:/home/cpg/bin
 alias up='yum update -y'
 alias ll='ls -lh --color=auto'
 alias ping='ping -c 10'
+alias top='htop'
 
 # Locating files
 alias cssfiles='find -L . -name "*.css"'
@@ -28,6 +29,7 @@ alias xmlfiles='find -L . -name "*.xml"'
 alias noversion='find -L . -name "*.php" ! -exec grep -q "@version" {} \; -print'
 alias nocopyright='find -L . -name "*.php" ! -exec grep -q "@copyright" {} \; -print'
 alias nolicense='find -L . -name "*.php" ! -exec grep -q "@license" {} \; -print'
+alias noautogen='find -L . -name "*.php" ! -exec grep -q "autogen" {} \; -print'
 alias phpclassnames='phpfiles | xargs grep "^class " | awk "{print \$2}" | sort'
 alias sqlops='phpfiles | xargs egrep "mysql_|mysqli_|pg_|oci_"'
 
@@ -36,5 +38,6 @@ alias noformatting='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 
 # Formatting
 alias dosbreaks="grep -Ilsr $'\r$' ."
-alias striptrailingspaces="sed -i 's/[[:space:]]*$//g' **/*.*"
-
+alias striptrailingspacesrecursive="sed -i 's/[[:space:]]*$//g' **/*.*"
+alias striptrailingspaces="sed -i 's/[[:space:]]*$//g' "
+alias stripbom='tail --bytes=+4'
